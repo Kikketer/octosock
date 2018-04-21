@@ -30,7 +30,10 @@ const TicTacToe = Game({
         cells[id] = ctx.currentPlayer
       }
 
-      return { ...G, cells }
+      const newState = { ...G, cells }
+      console.log('Cell clicked, returning: ', newState)
+
+      return newState
     }
   },
 

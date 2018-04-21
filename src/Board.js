@@ -3,6 +3,7 @@ import React from 'react'
 class TicTacToeBoard extends React.Component {
   onClick(id) {
     if (this.isActive(id)) {
+      console.log(`Clicking the cell ${id}`)
       this.props.moves.clickCell(id)
       this.props.events.endTurn()
     }
