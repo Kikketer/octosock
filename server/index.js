@@ -1,5 +1,10 @@
-require('dotenv').config()
-const Server = require('boardgame.io/server').Server
-const TicTacToe = require('../src/Game')
+import * as dotenv from 'dotenv'
+import { Server } from 'boardgame.io/server'
+import TicTacToe from '../src/Game'
+
+dotenv.config()
+
 const server = Server({ games: [TicTacToe] })
-server.run(8000)
+server.run(process.env.PORT)
+
+console.log('Server started: ', process.env.PORT)
